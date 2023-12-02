@@ -10,7 +10,7 @@ En este repositorio, encontrarás mis soluciones a los problemas de AdventJS. He
 
 ### ¿Quién soy yo?
 
-Soy abdevcode, un ingeniero de software con mas de 5 anos de experiencia en el desarollo web. Me encanta la programación y siempre estoy buscando nuevos retos.
+Soy abdevcode, un ingeniero de software con más de 5 años de experiencia en el desarrollo web. Me encanta la programación y siempre estoy buscando nuevos retos.
 
 ### ¿Cómo participar?
 
