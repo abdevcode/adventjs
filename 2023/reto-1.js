@@ -8,14 +8,10 @@
 // Si no hay números repetidos, devuelve -1.
 
 function findFirstRepeated(gifts) {
-    let dictionary = {}
+    let dictionary = new Set()
 
-    for (let i = 0; i < gifts.length; i++) {
-        let gift = gifts[i]
-
-        if (dictionary[gift]) return gift
-
-        dictionary[gift] = true
+    for (let gift of gifts) {
+        if ( dictionary.size === dictionary.add(gift).size ) return gift
     }
 
     return -1
