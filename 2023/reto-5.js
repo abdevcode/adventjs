@@ -4,36 +4,36 @@ function cyberReindeer(road, time) {
     const openBarrierBlock = '*'
     const closedBarrierBlock = '|'
 
-    const canMove = (position, road) => {
-        return road[position] === roadBlock || road[position] === openBarrierBlock
+    const canMove = (index, road) => {
+        return road.at(index) === roadBlock || road.at(index) === openBarrierBlock
     }
 
     const openBarriers = (road) => {
-        return road
-            .join('')
-            .replaceAll(closedBarrierBlock, openBarrierBlock)
-            .split('')
+        return road.replaceAll(closedBarrierBlock, openBarrierBlock)
+    }
+
+    const replaceAt = (text, index, char) => {
+        return text.substring(0, index) + char + text.substring(index + char.length);
     }
 
     let sledPosition = road.indexOf(sledBlock)
     let actRoadBlock = roadBlock
-    let roadArr = road.split('')
     let roadStates = []
 
     roadStates.push(road)
 
     for (let i = 1; i < time; i++) {
         if (i === 5) {
-            roadArr = openBarriers(roadArr)
+            road = openBarriers(road)
         }
 
-        if (canMove(sledPosition + 1, roadArr)) {
-            roadArr[sledPosition] = actRoadBlock
-            actRoadBlock = roadArr[++sledPosition]
-            roadArr[sledPosition] = sledBlock
+        if (canMove(sledPosition + 1, road)) {
+            road = replaceAt(road, sledPosition, actRoadBlock)
+            actRoadBlock = road.at(++sledPosition)
+            road = replaceAt(road, sledPosition, sledBlock)
         }
 
-        roadStates.push(roadArr.join(''))
+        roadStates.push(road)
     }
 
     return roadStates
