@@ -19,7 +19,7 @@ console.log(preparedGifts3) // []
 // No hay regalos, la lista queda vacía
 ``` 
 
-## reto 2
+## Reto 2
 
 Santa Claus 🎅 quiere enmarcar los nombres de los niños buenos para decorar su taller 🖼️, pero el marco debe cumplir unas reglas específicas. Tu tarea es ayudar a los elfos a generar este marco mágico.
 
@@ -60,7 +60,7 @@ createFrame(['a', 'bb', 'ccc'])
 createFrame(['a', 'bb', 'ccc', 'dddd'])
 ``` 
 
-## reto 3
+## Reto 3
 
 Santa Claus 🎅 está revisando el inventario de su taller para preparar la entrega de regalos. Los elfos han registrado los juguetes en un array de objetos, pero la información está un poco desordenada. Necesitas ayudar a Santa a organizar el inventario.
 
@@ -117,3 +117,54 @@ organizeInventory(inventory2)
 //   }
 // }
 ``` 
+
+## Reto 4
+
+¡Es hora de poner el árbol de Navidad en casa! 🎄 Pero este año queremos que sea especial. Vamos a crear una función que recibe la altura del árbol (un entero positivo entre 1 y 100) y un carácter especial para decorarlo.
+
+La función debe devolver un string que represente el árbol de Navidad, construido de la siguiente manera:
+
+  - El árbol está compuesto de triángulos de caracteres especiales.
+  - Los espacios en blanco a los lados del árbol se representan con guiones bajos _.
+  - Todos los árboles tienen un tronco de dos líneas, representado por el carácter #.
+  - El árbol siempre debe tener la misma longitud por cada lado.
+  - Debes asegurarte de que el árbol tenga la forma correcta usando saltos de línea \n para cada línea.
+
+Ejemplos:
+``` javascript
+const tree = createXmasTree(5, '*')
+console.log(tree)
+/*
+____*____
+___***___
+__*****__
+_*******_
+*********
+____#____
+____#____
+*/
+
+const tree2 = createXmasTree(3, '+')
+console.log(tree2)
+/*
+__+__
+_+++_
++++++
+__#__
+__#__
+*/
+
+const tree3 = createXmasTree(6, '@')
+console.log(tree3)
+/*
+_____@_____
+____@@@____
+___@@@@@___
+__@@@@@@@__
+_@@@@@@@@@_
+@@@@@@@@@@@
+_____#_____
+_____#_____
+*/
+``` 
+Asegúrate de utilizar saltos de línea `\n` al final de cada línea, **excepto en la última**.
