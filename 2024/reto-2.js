@@ -10,11 +10,11 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
 function createFrame(names) {
     var maxLength = Math.max.apply(Math, __spreadArray(__spreadArray([], names.map(function (name) { return name.length; }), false), [0], false));
     var border = '*'.repeat(maxLength + 4);
-    return maxLength ? __spreadArray(__spreadArray([
+    return __spreadArray(__spreadArray([
         border
     ], names.map(function (name) { return "* ".concat(name).concat(' '.repeat(maxLength - name.length), " *"); }), true), [
         border
-    ], false).join('\n') : '*';
+    ], false).join('\n');
 }
 console.log(createFrame([]), '\n');
 // Resultado esperado:
