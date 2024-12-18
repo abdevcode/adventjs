@@ -5,14 +5,16 @@ type Shoe = {
 
 function organizeShoes(shoes: Shoe[]): number[] {
   const pairs: number[] = []
-  const map = new Map();
+  const counter: Map<number, number> = new Map()
 
   for (const { type, size } of shoes) {
-    let count: number = map.get(size) ?? 0
-    type === 'R' ? count++ : count--
-    map.set(size, count)
+    const position: number = 1 - (+('R' === type) * 2)
+    const count: number = (counter.get(size) ?? 0) - position
+    counter.set(size, count)
 
-    if (type === 'R' && count <= 0 || type === 'I' && count >= 0) pairs.push(size)
+    if (type === 'R' && count <= 0 || type === 'I' && count >= 0) {
+      pairs.push(size)
+    }
   }
 
   return pairs

@@ -1,14 +1,15 @@
 function organizeShoes(shoes) {
     var _a;
     var pairs = [];
-    var map = new Map();
+    var counter = new Map();
     for (var _i = 0, shoes_1 = shoes; _i < shoes_1.length; _i++) {
         var _b = shoes_1[_i], type = _b.type, size = _b.size;
-        var count = (_a = map.get(size)) !== null && _a !== void 0 ? _a : 0;
-        type === 'R' ? count++ : count--;
-        map.set(size, count);
-        if (type === 'R' && count <= 0 || type === 'I' && count >= 0)
+        var position = 1 - (+('R' === type) * 2);
+        var count = ((_a = counter.get(size)) !== null && _a !== void 0 ? _a : 0) - position;
+        counter.set(size, count);
+        if (type === 'R' && count <= 0 || type === 'I' && count >= 0) {
             pairs.push(size);
+        }
     }
     return pairs;
 }
